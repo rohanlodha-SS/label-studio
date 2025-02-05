@@ -48,7 +48,7 @@ RUN --mount=type=cache,target=${YARN_CACHE_FOLDER},sharing=locked \
 FROM frontend-builder AS frontend-version-generator
 RUN --mount=type=cache,target=${YARN_CACHE_FOLDER},sharing=locked \
     --mount=type=cache,target=${NX_CACHE_DIRECTORY},sharing=locked \
-    --RUN echo "Skipping Git version generation" \
+    RUN echo "Skipping Git version generation" \
     yarn version:libs
 
 ################################ Stage: venv-builder (prepare the virtualenv)
